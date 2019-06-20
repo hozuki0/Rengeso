@@ -16,13 +16,9 @@ namespace Rengeso
             var clipboardText = ClipBoard;
             if (clipboardText == null) return;
 
-            Console.WriteLine($"Debug:{clipboardText}");
             clipboardText = clipboardText.Replace("\\", "/");
-            Console.WriteLine($"Debug:{clipboardText}");
 
             Clipboard.SetText(clipboardText, TextDataFormat.UnicodeText);
-
-            Console.ReadKey();
         }
 
         private static string ClipBoard => Clipboard.ContainsText() ? Clipboard.GetText() : null;
